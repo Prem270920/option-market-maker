@@ -33,7 +33,7 @@ class DeltaHedgingSimulator:
         return S * norm.cdf(d1) - self.K * np.exp(-self.r * time_left) * norm.cdf(d2)
     
     def run_simulation(self):
-        print(f"TARTING SIMULATION: {self.n_steps} STEPS")
+        print(f"STARTING SIMULATION: {self.n_steps} STEPS")
         
         # SELL 1 Call Option at the start
         # collect cash from selling the option
@@ -56,7 +56,7 @@ class DeltaHedgingSimulator:
                 self.cash -= cost
                 self.stock_inventory += trade_size
 
-            # simulate Market Move (Random Walk)
+            # simulate Market Move 
             # Brownian Motion formula: S_new = S_old * exp(...)
             shock = np.random.normal(0, 1)
             self.S *= np.exp((self.r - 0.5 * self.sigma**2) * self.dt + self.sigma * np.sqrt(self.dt) * shock)
@@ -87,7 +87,7 @@ class DeltaHedgingSimulator:
         ax1.plot(self.stock_price_history, color=color, label='Stock Price')
         ax1.tick_params(axis='y', labelcolor=color)
         
-        ax2 = ax1.twinx()  # Second y-axis
+        ax2 = ax1.twinx() 
         color = 'tab:green'
         ax2.set_ylabel('My PnL ($)', color=color)
         ax2.plot(self.pnl_history, color=color, linestyle='--', label='Hedged PnL')
