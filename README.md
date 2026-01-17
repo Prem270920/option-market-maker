@@ -26,8 +26,7 @@ I ran the simulation under two distinct market regimes to test the algorithm's r
 * **Premium Collected:** ~$16.40 (Higher risk = Higher premium)
 * **Result:** The algorithm fought hard against **Gamma Risk**. Despite the stock crashing 45%, the Portfolio PnL remained stable, proving the hedge worked.
 
-![Simulation Chart](path_to_your_chart_image.png)
-*(Note: Replace this line with the actual image of your chart)*
+![Simulation Chart](/Users/prem/option-market-maker/simulation_chart.png)
 
 ## 🛠️ Tech Stack
 * **Python:** Core logic and simulation loop.
